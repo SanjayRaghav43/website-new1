@@ -4,6 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lumin Consultancy | Accreditation & Quality Excellence</title>
+    <!-- ANTI-INSPECTION SCRIPT & THEME LOADER -->
+    <script>
+        (() => {
+            // Apply theme from localStorage immediately to prevent color flashing
+            if (localStorage.getItem('theme') === 'light') {
+                document.documentElement.classList.remove('dark');
+            } else {
+                document.documentElement.classList.add('dark');
+            }
+            
+            // Anti-inspection logic
+            const blockAndTrigger = (e) => {
+                e.preventDefault();
+                if (typeof triggerBlocker === 'function') {
+                    triggerBlocker();
+                }
+            };
+            document.addEventListener('contextmenu', blockAndTrigger, { capture: true });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key.toUpperCase())) || (e.ctrlKey && e.key.toUpperCase() === 'U')) {
+                    blockAndTrigger(e);
+                }
+            }, { capture: true });
+        })();
+    </script>
+    <!--
+    Copyright © 2025 Lumin Consultancy. 
+    All Rights Reserved.
+
+    This website, including all HTML, CSS, JavaScript, design, layout, content, 
+    animations, branding elements, and UI components is proprietary and confidential.
+
+    Unauthorized copying, reproduction, modification, distribution, or use in any 
+    form is strictly prohibited without explicit written permission from 
+    Lumin Consultancy.
+    
+    This code is submitted and registered as original work under Lumin Consultancy 
+    and is legally protected by copyright laws.
+    
+    Developer: Sanjay Reddy
+    Company: Lumin Consultancy
+-->
     <meta name="description" content="Your trusted partner in NABL Accreditation, ISO 17025 Compliance, and Quality Excellence.">
     
     <!-- Tailwind CSS -->
